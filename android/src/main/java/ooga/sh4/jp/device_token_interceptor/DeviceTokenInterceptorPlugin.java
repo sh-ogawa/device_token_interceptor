@@ -1,6 +1,5 @@
 package ooga.sh4.jp.device_token_interceptor;
 
-import android.support.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -11,7 +10,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 /** DeviceTokenInterceptorPlugin */
 public class DeviceTokenInterceptorPlugin implements FlutterPlugin, MethodCallHandler {
   @Override
-  public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+  public void onAttachedToEngine(FlutterPluginBinding flutterPluginBinding) {
     final MethodChannel channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "device_token_interceptor");
     channel.setMethodCallHandler(new DeviceTokenInterceptorPlugin());
   }
@@ -31,7 +30,7 @@ public class DeviceTokenInterceptorPlugin implements FlutterPlugin, MethodCallHa
   }
 
   @Override
-  public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
+  public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else {
@@ -40,6 +39,6 @@ public class DeviceTokenInterceptorPlugin implements FlutterPlugin, MethodCallHa
   }
 
   @Override
-  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+  public void onDetachedFromEngine(FlutterPluginBinding binding) {
   }
 }
