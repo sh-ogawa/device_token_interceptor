@@ -1,8 +1,8 @@
 name: device_token_interceptor
 description: get apns device token.
 version: 0.0.2
-author:
-homepage:
+author: sh-ogawa<syogo0417@gmail.com>
+homepage: https://github.com/sh-ogawa/device_token_interceptor
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
